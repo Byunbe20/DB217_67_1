@@ -27,15 +27,41 @@
         .try {
     font-size: 1.5em;
   }
-  let number = Math.floor(Math.random() * 100) + 1;
     </style>
 </head>
 <body>
+    <script>
+        let number = Math.floor(Math.random() * 100) + 1;
+        let guesses = [];
+        let answer;
+        let count = 0;
+        do {
+            answer = +prompt('เรามีตัวเลข 1-100 ลองทายซิว่าเลขอะไร');
+            count++;
+            guesses.push(answer);
+            if (answer < number) {
+            alert('น้อยไป');
+  
+        }         else if (answer > number) {
+            alert('มากไป');
+  
+        }         else {
+            alert('ถูกต้องแล้วคร๊าบ');
+  
+        }
+        } while(answer != number);
+        </script>
     <div>
         <h1>เลขของเรา</h1>
         <p id="number"></p>
         <p class="try">คุณทายไป 0 ครั้ง</p>
         <p class="try"></p>
       </div>
+    <script>
+        document.getElementById('number').innerHTML = number;
+        document.querySelectorAll('.try')[0].innerHTML = `คุณทายไป ${count} ครั้ง`;
+        document.querySelectorAll('.try')[1].innerHTML = guesses;
+        
+    </script>
 </body>
 </html>

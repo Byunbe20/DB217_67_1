@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>วาดสามเหลี่ยม</title>
+    </head>
+<body>
+    <h1>วาดสามเหลี่ยม</h1>
+    <label for="size">กำหนดขนาด:</label>
+    <input type="number" id="size">
+    <br>
+    <button onclick="draw()">วาดเลย</button>
+    <code id="canvas"></code>
+<script>
+    function draw() {
+        let size = perseInt(document.getElementById("size").value);
+        let result = '';
+        for (let i = 1; i <= size; i++) { // i = i + 1 <=> i += 1 <=> i++
+            result += '<br>';
+            // for  (let j = size-i; j > 0; j) {
+            //     result += '-';
+            // }
+            // for (let j = 0; j < i; j++) {
+            //     result += '*';
+            // }
+            for (let j=0; j < size; j++) {
+                // if (j < size-i) {
+                //     result += '-';
+                // }
+                // else {
+                //     result += '*';
+                // }
+                result += j < size-i ? '-' : '*' ;
+            }
+        }
+        document.getElementById('canvas').innnerHTML = result;
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #2b2b2b;
+  color: white;
+}
+
+header {
+  background-color: white;
+  padding: 20px;
+}
+
+header h1 {
+  text-align: center;
+  font-family: "Audiowide", sans-serif;
+  color: black;
+}
+
+.badge {
+  font-size: 14px;
+  padding: 2px 10px;
+  background-color: #e25840;
+  font-family: "Audiowide", sans-serif;
+  width: 45px;
+  position: absolute;
+  top: 30px;
+  border-radius: 5px;
+}
+
+#user-label {
+  left: -35px;
+}
+
+#comp-label {
+  right: -35px;
+}
+
+#score {
+  margin: 20px auto;
+  border: 3px solid white;
+  border-radius: 4px;
+  width: 200px;
+  font-family: 'Unlock', cursive;
+  font-size: 46px;
+  padding: 15px 20px;
+  position: relative;
+  text-align: center;
+}
+
+#result {
+  font-family: Calibri, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#stage {
+  text-align: center;
+  margin: 30px;
+}
+
+#comp-choice {
+  transform: rotateY(180deg);
+}
+
+#choices {
+  text-align: center;
+}
+
+#choices > div {
+  display: inline;
+} 
+
+#choices img {
+  width: 80px;
+}
+
+.choice {
+  margin: 0 10px;
+  border-radius: 50%;
+  border: 2px solid yellow;
+}
+
+#message {
+  text-align: center;
+  margin-top: 25px;
+  font-family: Calibri, sans-serif;
+}
+
+.choice img:hover {
+  position: relative;
+  top: -10px;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes ready {
+  0%, 100% {
+    top: 0;
+  }
+  25% {
+    top: -10px;
+  }
+  75% {
+    top: 10px;
+  }
+}
+
+.ready {
+  position: relative;
+  animation: ready 0.5s infinite;
+}
+
+@keyframes user-winner {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes comp-winner {
+  0%, 100% {
+    transform: scale(1) rotateY(180deg);
+  }
+  50% {
+    transform: scale(1.25) rotateY(180deg);
+  }
+}
+
+#user_choice.winner {
+  animation: user-winner 0.5s ease infinite;
+}
+#comp_choice.winner {
+  animation: comp-winner 0.5s ease infinite;
+}
+
